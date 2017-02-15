@@ -4,3 +4,4 @@ package.json
 public/
 spec/
 test/
+build/*.js
