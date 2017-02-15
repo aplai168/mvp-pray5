@@ -7,7 +7,7 @@ var port = process.env.PORT || 3000; 				// set the port
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+const router = express.Router();
 // configuration ===============================================================
 mongoose.connect('mongodb://localhost/myapp');
 
@@ -28,8 +28,13 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 
 
 // routes ======================================================================
-// require('./app/routes.js')(app);
-
+require('./app/routes.js')(app);
+// router.get('/', (req, res, next) => {
+//   Prayer.find((err, prayers) => {
+//     if (err) { return next(err); };
+//     res.json(prayers);
+//   });
+// });
 
 // listen (start app with node server.js) ======================================
 app.listen(port);
