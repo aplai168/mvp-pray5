@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var timestamps = require('mongoose-timestamp');
 
-var PrayerSchema = new mongoose.Schema({
-    user: {
+var UserSchema = new mongoose.Schema({
+    username: {
       type: String,
-      required: true,
+      required: false,
     },
-    message: {
+    password: {
       type: String,
       required: true,
     }
