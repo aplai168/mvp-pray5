@@ -1,0 +1,90 @@
+body {
+    /*background-image: url("/assets/faithbg.png");
+    background-color: #cccccc;*/
+    background: url(/assets/chalkboard.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.quotes {
+    height: 800px;
+    width: 600px;
+    border: 1px solid #000;
+    -webkit-animation: animate_bg 10s;
+    animation: animate_bg 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate_bg {
+    0%   {background: url(/assets/inspirationalquote1.jpg);}
+    50%  {background: url(/assets/stevejobs.jpg);}
+    100% {background: url(/assets/changeworld3.jpg);}
+}
+
+@-webkit-keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+h1 {
+	font-family: 'Allerta Stencil';
+	font-size: 80px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  color: #FEFEFE;
+}
+ul {
+	font-family: 'Allerta Stencil';
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  color: #FEFEFE;
+}
+
+ul, .pray {
+    float: none;
+    line-height: 19px;
+    padding: 9px 10px 11px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color:  #ddd !important;
+}
+.prayerItem, .pray {
+  color: #FEFEFE;
+}
+
+
+
+
+/*#quotes {
+  background: url(/assets/inspirationalquote1.jpg);
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%;
+}*/
+.pray, .prayerItem {
+    width: 100%;
+    padding: 10px;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .glyphicon{
+          transition: all .5s;
+          &.glyphicon-heart{
+            color: #e74c3c;
+          }
+          &.glyphicon-heart-empty{
+            &:hover{
+              transform:scale(1.1);
+            }
+          }
+        }

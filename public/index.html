@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WALL OF DREAMS</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script><!-- load angular -->
+    <script src="app.js"></script>
+
+  </head>
+  <body ng-app="sampleApp">
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Wall of Dreams</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <!-- <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  <div style="width: 100%;">
+   <div style="float:right; width: 50%">
+     <div ng-controller="MainController">
+
+       <div class="container">
+         <div class="text-center"><h1>BEFORE I DIE....</h1></div>
+       </br>
+         <div id="prayer-request-form" class="row">
+           <div class="col-sm-8 col-sm-offset-2 text-center">
+           <form>
+             <input type="text" class="form-control input-lg text-center" placeholder="I would like to build my very own app!" ng-model="formData.message" />
+             <input type="text" class="form-control input-sm text-center" placeholder="Your Name" ng-model="formData.user" />
+
+           </br>
+             <button class="btn btn-primary btn-lg" ng-click="createTodo()">Submit Yours</button>
+           </form>
+         </div>
+         </div>
+       </br>
+         <div id="prayer-list" class="row">
+           <div class="col-sm-4 col-sm-offset-4">
+             <ul class="prayerItem" ng-repeat="p in prayers | orderBy: 'createdAt' | limitTo: 10">
+               {{ p.message }}
+             </br>
+               {{ p.user }}
+               <a href="#" ng-click="doVote()">
+                 <i class="glyphicon" ng-class="(like.userVotes==1) ? 'glyphicon-heart' : 'glyphicon-heart-empty'"></i>
+                 <span ng-model="like.votes">{{like.votes}}</span>
+               </a>
+             </ul>
+           </div>
+         </div>
+         </div>
+     </div>
+   </div>
+   <!-- <table>
+      <tr class="pray" ng-repeat="(index, value) in prayers | orderBy: '-createdAt' | limitTo: 10" ng-switch on="index % 3">
+        <td class="pray" ng-switch-when="0">
+          {{ prayers[index].message}}
+        </td>
+        <td class="pray" ng-switch-when="0">
+          <span ng-show="prayers[index+1]">
+            {{ prayers[index+1].message}}
+          </span>
+        </td>
+        <td class="pray" ng-switch-when="0">
+          <span ng-show="prayers[index+2]">
+            {{ prayers[index+2].message}}
+          </span>
+        </td>
+      </tr>
+    </table> -->
+   <div class="quotes" style="float:left;">
+
+   </div>
+</div>
+<div style="clear:both"></div>
+
+
+    <!-- <div ng-controller="GreetingController">
+      <li ng-repeat="greet in greeting">
+        {{ greet }}
+
+      </li> -->
+    </div>
+  </body>
+</html>

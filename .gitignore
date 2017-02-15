@@ -1,6 +1,5 @@
 .eslintrc.js
 node_modules/
-public/
 spec/
 test/
 build/*.js
