@@ -15,7 +15,7 @@ module.exports = (app) => {
   app.get('/api/prayers', (req, res) => {
     getPrayers(res);
   });
-  app.post('/api/prayerRequest', (req, res) => {
+  app.post('/api/prayers', (req, res) => {
     PrayerTable.create({
       message: req.body.message
     }, (err, pray) => {

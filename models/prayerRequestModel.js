@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('Prayer', {
     user: {
       type: String,
-      required: true,
+      required: false,
     },
     message: {
       type: String,

@@ -14,10 +14,7 @@ mongoose.connect('mongodb://localhost/myapp');
 //testing mongoose
 require('./models/prayerRequestModel.js'); // which executes 'mongoose.connect()'
 
-// const mongoose = require('mongoose');
 console.log(mongoose.connection.readyState);
-
-// mongoose.connect('mongodb://aplai168:shortpower@localhost:3000/prayerDB'); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
@@ -29,12 +26,7 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 
 // routes ======================================================================
 require('./app/routes.js')(app);
-// router.get('/', (req, res, next) => {
-//   Prayer.find((err, prayers) => {
-//     if (err) { return next(err); };
-//     res.json(prayers);
-//   });
-// });
+
 
 // listen (start app with node server.js) ======================================
 app.listen(port);
