@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-module.exports = mongoose.model('Prayer', {
+var timestamps = require('mongoose-timestamp');
+
+var PrayerSchema = new mongoose.Schema({
     user: {
       type: String,
       required: false,
@@ -7,9 +9,11 @@ module.exports = mongoose.model('Prayer', {
     message: {
       type: String,
       required: true,
-    },
+    }
 });
+PrayerSchema.plugin(timestamps);
 
+module.exports = mongoose.model('Prayer', PrayerSchema);
 //dont use thie below anymore
 // const PrayerSchema = new mongoose.Schema({
 //   user: {
