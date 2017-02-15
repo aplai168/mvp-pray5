@@ -1,6 +1,5 @@
 .eslintrc.js
 node_modules/
-package.json
 public/
 spec/
 test/
