@@ -10,7 +10,8 @@ const bodyParser = require('body-parser');
 
 const methodOverride = require('method-override');
 
-mongoose.connect('mongodb://localhost/MONGODB_URI');
+const mongodbURI = process.env.MONGODB_URI;
+mongoose.connect(`mongodb://localhost/${mongodbURI}`);
 
 require('./models/prayerModel.js');
 
