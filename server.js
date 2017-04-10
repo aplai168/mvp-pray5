@@ -11,7 +11,7 @@ const router = express.Router();
 // configuration ===============================================================
 mongoose.connect('mongodb://localhost/myapp');
 
-//testing mongoose
+
 require('./models/prayerRequestModel.js'); // which executes 'mongoose.connect()'
 
 console.log(mongoose.connection.readyState);
