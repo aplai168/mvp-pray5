@@ -1,13 +1,13 @@
 body {
     /*background-image: url("/assets/faithbg.png");
     background-color: #cccccc;*/
-    background: url(/assets/chalkboard.jpg) no-repeat center center fixed;
+    /*background: url(/assets/chalkboard.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
 }
-.quotes {
+/*.quotes {
     height: 800px;
     width: 600px;
     border: 1px solid #000;
@@ -27,15 +27,15 @@ body {
     0%   {background:red;}
     50%  {background:green;}
     100% {background:blue;}
-}
+}*/
 h1 {
-	font-family: 'Allerta Stencil';
+	font-family: 'Verdana';
 	font-size: 80px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 500;
+	font-weight: 100;
 	line-height: 26.4px;
-  color: #FEFEFE;
+  color: 'black';
 }
 ul {
 	font-family: 'Allerta Stencil';
@@ -59,16 +59,6 @@ ul, .pray {
   color: #FEFEFE;
 }
 
-
-
-
-/*#quotes {
-  background: url(/assets/inspirationalquote1.jpg);
-  width: 50%;
-  position: absolute;
-  left: 0px;
-  height: 100%;
-}*/
 .pray, .prayerItem {
     width: 100%;
     padding: 10px;
@@ -87,4 +77,67 @@ ul, .pray {
               transform:scale(1.1);
             }
           }
+        }
+
+
+
+        .post {
+          position: relative;
+          padding: 20px;
+          flex-basis: auto;
+        }
+
+        .post__category {
+          font-size: .8rem;
+          text-transform: uppercase;
+        }
+
+        .post__title {
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin: 20px 0 10px;
+        }
+
+        .post__content {
+          font-size: 1.3rem;
+          margin-bottom: 50px;
+        }
+
+        .post__category,
+        .post__permalink {
+          color: #4a4a4a;
+          text-decoration: underline;
+        }
+
+        .post__permalink {
+          position: absolute;
+          bottom: 20px;
+        }
+
+        .fb-auto {
+          flex-basis: auto;
+        }
+
+        .pink {
+          background: #ffdae0;
+        }
+
+        .gray {
+          background: #e7f0da;
+        }
+
+        .green {
+          background: #ddebd0;
+        }
+
+        .gold {
+          background: #fcf5b6;
+        }
+
+        .blue {
+          background: #cae9ef;
+        }
+
+        .red {
+          background: #f8c9c1;
         }
