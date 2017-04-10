@@ -11,6 +11,8 @@ const methodOverride = require('method-override');
 
 mongoose.connect(process.env.MONGODB_URI);
 
+require('dotenv').config();
+
 require('./models/prayerModel.js');
 
 app.use(express.static('./public'));
