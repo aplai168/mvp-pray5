@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 
 const app = express();
 const mongoose = require('mongoose');
@@ -10,8 +11,6 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 mongoose.connect(process.env.MONGODB_URI);
-
-require('dotenv').config();
 
 require('./models/prayerModel.js');
 
