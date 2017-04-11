@@ -23,5 +23,8 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 require('./app/routes.js')(app);
 
+app.get('/favicon.ico', (req, res) => {
+  res.send(204);
+});
 app.listen(port);
 console.warn(`App listening on port http://localhost:${port}`);
