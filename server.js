@@ -1,6 +1,9 @@
 const express = require('express');
 require('dotenv').config();
 
+const favicon = require('serve-favicon');
+const path = require('path');
+
 const app = express();
 const mongoose = require('mongoose');
 
@@ -23,8 +26,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 require('./app/routes.js')(app);
 
-app.get('/favicon.ico', (req, res) => {
-  res.send(204);
-});
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.listen(port);
 console.warn(`App listening on port http://localhost:${port}`);
