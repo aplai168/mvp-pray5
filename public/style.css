@@ -1,33 +1,10 @@
 body {
-    /*background-image: url("/assets/faithbg.png");
-    background-color: #cccccc;*/
-    /*background: url(/assets/chalkboard.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-}
-/*.quotes {
-    height: 800px;
-    width: 600px;
-    border: 1px solid #000;
-    -webkit-animation: animate_bg 10s;
-    animation: animate_bg 10s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
+
 }
 
-@keyframes animate_bg {
-    0%   {background: url(/assets/inspirationalquote1.jpg);}
-    50%  {background: url(/assets/stevejobs.jpg);}
-    100% {background: url(/assets/changeworld3.jpg);}
+.top {
+  padding: 50px 20px 20px;
 }
-
-@-webkit-keyframes animate_bg {
-    0%   {background:red;}
-    50%  {background:green;}
-    100% {background:blue;}
-}*/
 h1 {
 	font-family: 'Verdana';
 	font-size: 80px;
@@ -140,4 +117,16 @@ ul, .pray {
 
         .red {
           background: #f8c9c1;
+        }
+
+        .aqua {
+          background: #42f4f1;
+        }
+
+        .magenta {
+          background: #f4418c;
+        }
+
+        .electric {
+          background: #4c41f4;
         }

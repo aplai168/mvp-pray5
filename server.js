@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -22,8 +22,8 @@ app.use(express.static('./public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
-// app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-// app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(methodOverride('X-HTTP-Method-Override'));
 
 require('./app/routes.js')(app);
 
