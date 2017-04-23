@@ -78,6 +78,26 @@ ul, .pray {
         .post__content {
           font-size: 1.3rem;
           margin-bottom: 50px;
+          color: #FFFFFF;
+        }
+
+        .post__user {
+          font-size: .8rem;
+          margin-bottom: 10px;
+          bottom: 20px;
+          color: #FFFFFF;
+        }
+
+        .post__time {
+          font-size: .8rem;
+          margin-bottom: 10px;
+          color: #FFFFFF;
+        }
+
+        .verse {
+          font-size: 1.3rem;
+          margin-bottom: 50px;
+          color: 'black';
         }
 
         .post__category,
@@ -130,3 +150,57 @@ ul, .pray {
         .electric {
           background: #4c41f4;
         }
+.position1 {
+  position: absolute;
+  top: 35px;
+  left: 170px;
+}
+
+.bubble
+{
+position: relative;
+top: 100px;
+left: 200px;
+width: 500px;
+height: 120px;
+padding: 0px;
+margin: 100px;
+background: #4c41f4;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #4c41f4 solid 9px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 24px 15px 0;
+border-color: #4c41f4  transparent;
+display: block;
+width: 0;
+z-index: 1;
+bottom: -24px;
+left: 33px;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 32px 23px 0;
+border-color: #4c41f4  transparent;
+display: block;
+width: 0;
+z-index: 0;
+bottom: -41px;
+left: 25px;
+}
+
+.instructions {
+  width: 300px;
+  margin: auto;
+}

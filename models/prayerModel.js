@@ -10,6 +10,9 @@ const PrayerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  style: {
+    type: String,
+  },
 });
 PrayerSchema.plugin(timestamps);
 

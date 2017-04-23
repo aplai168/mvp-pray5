@@ -2,102 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Global Prayer</title>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="Services/VerseFactory.js"></script> -->
   </head>
   <body ng-app="sampleApp">
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item">
-          <img src="assets/logolong.png">
-        </a>
-      </div>
-      <div class="nav-center">
-        <a class="nav-item" href="https://www.github.com/aplai168">
-          <span class="icon">
-            <i class="fa fa-github"></i>
-          </span>
-        </a>
-        <a class="nav-item" href="https://twitter.com/aplai168">
-          <span class="icon">
-            <i class="fa fa-twitter"></i>
-          </span>
-        </a>
-      </div>
-      <span class="nav-toggle">
-      </span>
-      <div class="nav-right nav-menu">
-        <a class="nav-item">
-          Back to Portfolio Page
-        </a>
-        <a class="nav-item" href="https://www.medium.com/@aplai168">
-          My Blog
-        </a>
 
-        <!-- <span class="nav-item">
-          <a class="button" >
-            <span class="icon">
-              <i class="fa fa-twitter"></i>
-            </span>
-            <span>Tweet</span>
-          </a>
-        </span> -->
-      </div>
-    </nav>
-  <div style="width: 100%;">
-   <div>
-     <div ng-controller="MainController">
-       <div class="container ">
-         <section class="hero is-primary top">
-            <div class="hero-body">
-              <div class="container">
-               <h1 class="title is-1 has-text-centered">Pray for the world</h1>
-              </div>
-            </div>
-         </section>
-           </br>
-           </br>
-         <div id="prayer-request-form" class="row">
-           <div class="col-sm-8 col-sm-offset-2 text-center">
-             <div class="field has-text-centered ">
-              <label class="label">Make a prayer request</label>
-              <form class="control">
-                <p class="control">
-                  <input class="input has-text-centered" type="text" placeholder="Please pray for those suffering in Syria!" ng-model="formData.message" required/>
-                  <input class="input has-text-centered" type="text" placeholder="Your Name" ng-model="formData.user" required/>
-                  <div class="has-text-centered">
-                    <button class="button is-primary " ng-click="createTodo()">Submit Yours</button>
-                  </div>
-                </p>
-              </form>
-            </div>
-           </div>
-         </div>
-      <section class="section">
-    <div class="container">
+    <div ui-view="nav"></div>
+    <div ui-view="home"></div>
 
-    <!-- FIRST ROW -->
-      <div class="tile is-ancestor" >
-        <div class="tile is-parent" ng-repeat="p in prayers | orderBy: '-createdAt' | limitTo: 3" ng-class="{'is-parent': $index == 0, 'is-parent, is-6': $index==1, 'is-parent, is-vertical': $index==2}">
-          <article class="tile post" ng-class="{'is-child, magenta': $index == 0, 'is-child, aqua': $index == 1, 'is-vertical, is-parent, electric': $index == 2}">
-            <a class="post__category" href="">{{ p.user }}</a>
-            <h3 class="post__title">{{ p.message }}</h3>
-            <a class="post__permalink" href="">{{ p.createdAt }}</a>
-          </article>
-        </div>
-      </div>
-    </div>
-      </section>
-        </br>
-
-     </div>
-    </div>
-   </div>
-  </div>
-</body>
+    <ui-view></ui-view>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="angular-youtube-embed.js"></script>  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+  </body>
 </html>

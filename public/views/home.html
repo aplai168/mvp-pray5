@@ -1,0 +1,76 @@
+<div style="width: 100%;">
+ <div>
+   <div ng-controller="MainController">
+     <div class="container ">
+       <section class="hero is-primary top">
+          <div class="hero-body">
+            <div class="container">
+             <h1 class="title is-1 has-text-centered">Pray for the world</h1>
+            </div>
+          </div>
+       </section>
+         </br>
+         </br>
+       <div>
+         <div id="bible-passage" class="has-text-centered">
+           <h1 class="is-1 has-text-centered">Today's Bible Verse</h1>
+           <h2 class="is-1 has-text-centered">Meditate prayerfully what God is saying through His Word</h2>
+            <span ng-init="getVerse()" class="verse">{{ bible.verse }}</span>
+          </br>
+           <button class="button is-primary" ng-click="getVerse()">Get a new verse</button>
+         </div>
+       </div>
+       <br />
+       <div id="prayerMode" class="has-text-centered">
+         <a class="button is-primary" ui-sref="prayerMode">Get Into Prayer Mode</a>
+       </div>
+       <div id="createDevotional" class="has-text-centered">
+         <a class="button is-primary" ui-sref="devotional">Create Your Own Devotional</a>
+       </div>
+       <div id="prayer-request-form" class="row">
+         <div class="col-sm-8 col-sm-offset-2 text-center">
+           <div class="field has-text-centered ">
+            <label class="label">Make a prayer request</label>
+            <form name="prayerRequest"class="control">
+              <p class="control">
+                <input class="input has-text-centered" type="text" novalidate placeholder="Please pray for those suffering in Syria!" ng-model="formData.message" required/>
+                <input class="input has-text-centered" type="text" novalidate placeholder="Your Name" ng-model="formData.user" required/>
+                <div class="has-text-centered">
+                  <button class="button is-primary " ng-click="submit(prayerRequest.$valid)">Submit Yours</button>
+                </div>
+              </p>
+            </form>
+          </div>
+         </div>
+       </div>
+    <section class="section">
+  <div class="container">
+  <div ng-repeat="p in prayers | orderBy: '-createdAt' | limitTo: 20">
+      <!-- <p class="bubble" ng-style="p.style" >{{ p.message }}</p> -->
+      <p class="bubble post__content" >
+        {{ p.message }}
+        <br />
+        <span class="post__user">By {{ p.user }}</span>
+        <span class="post__time">At {{ p.createdAt }}</span>
+      </p>
+
+  </div>
+
+  <!-- FIRST ROW -->
+    <!-- <div class="tile is-ancestor" >
+      <div class="tile is-parent" ng-repeat="p in prayers | orderBy: '-createdAt' | limitTo: 3" ng-class="{'is-parent': $index == 0, 'is-parent, is-6': $index==1, 'is-parent, is-vertical': $index==2}">
+        <article class="tile post" ng-class="{'is-child, magenta': $index == 0, 'is-child, aqua': $index == 1, 'is-vertical, is-parent, electric': $index == 2}">
+          <a class="post__category" href="">{{ p.user }}</a>
+          <h3 class="post__title">{{ p.message }}</h3>
+          <a class="post__permalink" href="">{{ p.createdAt }}</a>
+        </article>
+      </div>
+    </div> -->
+  </div>
+    </section>
+      </br>
+
+   </div>
+  </div>
+ </div>
+</div>
