@@ -1,4 +1,4 @@
-const myApp = angular.module('sampleApp', ['ui.router']);
+const myApp = angular.module('sampleApp', ['ui.router', 'youtube-embed']);
 
 myApp.controller('MainController', ['$scope', 'Prayers', 'Verse', 'Style', ($scope, Prayers, Verse, Style) => {
   $scope.colors = ['aqua', 'magenta', 'electric'];
@@ -55,15 +55,17 @@ myApp.controller('MainController', ['$scope', 'Prayers', 'Verse', 'Style', ($sco
   $scope.getVerse = () => {
     Verse.get()
     .success((data) => {
-      console.log(data, 'data')
       $scope.bible.verse = data;
     });
   };
-
 }]);
 
 myApp.controller('PrayerModeCtrl', ['$scope', function($scope) {
   $scope.journalTime = false;
+  $scope.worshipTime = false;
+  // video id
+  $scope.theBestVideo = 'https://www.youtube.com/watch?v=d5UHAOtAZPU';
+
 }]);
 
 myApp.factory('Prayers', ['$http', function ($http) {

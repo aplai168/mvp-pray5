@@ -1,12 +1,17 @@
-<h1 class="title has-text-centered">Prayer Time</h1>
-<div class="has-text-centered instructions">
-  This is your prayer space. You can choose to worship with music and sing to the Lord. You can speak to God about how you're feeling at this moment. Then take a moment to reflect how awesome He is. Praise Him for who He is. Ask Him to align your heart with His as you are His beloved child.
-</div>
-<button class="is-primary" ng-click="journalTime = !journalTime">Feel free to journal here.</button>  
-<button class="is-primary" ng-click="journalTime = !journalTime">Feel free to journal here.</button>
-    <div ng-show="journalTime" style="text-align: center;">
-      <textarea style="height:500px;width:800px;font-size:14pt;" /></textarea>
-      <div>
-        <button>Save Journal Entry</button>
-      </div>
+<div class="is-fullheight hero">
+  <h1 class="title has-text-centered">Prayer Time</h1>
+  <div class="has-text-centered instructions">
+    This is your prayer space. You can choose to worship with music and sing to the Lord. You can speak to God about how you're feeling at this moment. Then take a moment to reflect how awesome He is. Praise Him for who He is. Ask Him to align your heart with His as you are His beloved child.
+  </div>
+  <button class="is-primary center" ng-click="worshipTime = !worshipTime">Click here to open a worship video to guide you in worship of God.</button>
+    <div ng-show="worshipTime" class="center">
+      <youtube-video video-url="theBestVideo"></youtube-video>
     </div>
+  <button class="is-primary" ng-click="journalTime = !journalTime">Feel free to journal here.</button>
+      <div ng-show="journalTime" style="text-align: center;">
+        <textarea style="height:500px;width:800px;font-size:14pt;" /></textarea>
+        <div>
+          <button>Save Journal Entry</button>
+        </div>
+      </div>
+</div>

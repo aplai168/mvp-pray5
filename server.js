@@ -8,6 +8,8 @@ require('dotenv').config();
 const app = express();
 const mongoose = require('mongoose');
 
+const cors = require('cors');
+
 const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -24,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(cors({credentials: true, origin: 'localhost:5000'}));
 
 require('./app/routes.js')(app);
 
