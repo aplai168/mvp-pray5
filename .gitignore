@@ -6,4 +6,3 @@ build/*.js
 .DS_Store
 /*.env
 notes.js
-public/lib
