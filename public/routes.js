@@ -4,7 +4,7 @@ angular.module('sampleApp')
   ) {
     $stateProvider
       .state('nav', {
-        url: '/',
+        url: '/start',
         views: {
           'nav': {
             templateUrl: 'views/nav.html',

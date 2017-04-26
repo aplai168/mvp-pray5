@@ -78,9 +78,14 @@ myApp.factory('Prayers', ['$http', function ($http) {
 }]);
 
 myApp.factory('Verse', ['$http', ($http) => {
-  const url = 'http://labs.bible.org/api/?passage=random&formatting=plain ';
+  const url = 'https://labs.bible.org/api/?passage=random&formatting=plain&callback=?';
   return {
     get: () => $http.get(url),
+    // get: () => $http({
+    //   method: 'JSONP',
+    //   url,
+    //   // dataType: 'jsonp',
+    // }),
   };
 }]);
 
