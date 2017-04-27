@@ -22,7 +22,7 @@ module.exports = (app) => {
     });
   });
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/views/index.html'), (err) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'), (err) => {
       if (err) {
         console.warn(err);
       }

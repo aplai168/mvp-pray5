@@ -78,16 +78,18 @@ myApp.factory('Prayers', ['$http', function ($http) {
 }]);
 
 myApp.factory('Verse', ['$http', ($http) => {
-  const url = 'https://labs.bible.org/api/?passage=random&formatting=plain&callback=?';
+  // const url = 'https://labs.bible.org/api/?passage=random&formatting=plain&callback=?';
+  const url = '/bible';
   return {
     get: () => $http.get(url),
     // get: () => $http({
-    //   method: 'JSONP',
+    //   method: 'GET',
     //   url,
-    //   // dataType: 'jsonp',
+    //   dataType: 'application/json',
     // }),
   };
 }]);
+
 
 myApp.factory('Style', [() => {
   const getColor = () => {

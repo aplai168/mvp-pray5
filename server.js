@@ -1,6 +1,8 @@
 const express = require('express');
 require('dotenv').config();
 
+var rp = require('request-promise');
+
 // const favicon = require('serve-favicon');
 
 // const path = require('path');
@@ -26,25 +28,25 @@ app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(cors({ credentials: true, origin: 'localhost:5000' }));
-app.all("/api/*", function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
-    return next();
+// app.use(cors());
+// app.use(cors({ credentials: true, origin: 'localhost:5000' }));
+// app.options('*', cors())
+
+
+app.get('/bible', (req, res) => {
+  const params = {
+    method: 'GET',
+    url: 'http://bible-api.com/john+3:16',
+  };
+  rp(params)
+  .then((data) => {
+    res.status(200).send(data);
+  })
+  .catch((err) => {
+    res.status(400).send(err);
+  });
 });
-app.all("/api/*", function(req, res, next) {
-  if (req.method.toLowerCase() !== "options") {
-    return next();
-  }
-  return res.send(204);
-});
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
-//     return next();
-// });
+
 
 require('./app/routes.js')(app);
 

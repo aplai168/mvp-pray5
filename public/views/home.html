@@ -15,7 +15,8 @@
          <div id="bible-passage" class="has-text-centered">
            <h1 class="is-1 has-text-centered">Today's Bible Verse</h1>
            <h2 class="is-1 has-text-centered">Meditate prayerfully what God is saying through His Word</h2>
-            <span ng-init="getVerse()" class="verse">{{ bible.verse }}</span>
+            <span ng-init="getVerse()" class="verse">{{ bible.verse.text }}</span>
+            <span>{{ bible.verse.reference }}</span>
           </br>
            <button class="button is-primary" ng-click="getVerse()">Get a new verse</button>
          </div>
